@@ -1,6 +1,6 @@
 var windowWidth = $(window).width();
 layer.config({
-  extend: 'kzhomepage/style.css', //加载扩展样式
+  extend: 'kzhomepage/style.css',
   skin: 'layer-ext-kzhomepage'
 });
 
@@ -20,7 +20,7 @@ $('.kz-nav-btn').on('click', function() {
           type: 2,
           title: title,
           shadeClose: shadeClose,
-          anim:anim,
+          anim: anim,
           closeBtn: 2,
           isOutAnim: false,
           area: [area_w, area_h],
@@ -28,34 +28,30 @@ $('.kz-nav-btn').on('click', function() {
       });
       break;
     case 'current':
-      window.location = content
+      window.location = content;
       break;
     case 'newtab':
-      window.open('_blank').location = content
+      window.open(content, '_blank');
       break;
   }
 });
 
-console.log(
-    "\n" +
-      " %c KZHomePage v1.2.0 by kaygb " +
-      " %c https://blog.170601.xyz/archives/25.html " +
-      "\n" +
-      "\n",
-    "color: #fff; background: #fd79a8; padding:5px 0;",
-    "background: #FFF; padding:5px 0;"
-  );
-// 兼容旧版
-if(meting_music_api===""){
-    meting_api = "https://api.mizore.cn/meting/api.php";
-}
-var meting_api =
-  "https://api.mizore.cn/meting/api.php?server=:server&type=:type&id=:id";
+// Music Player Configuration
+const meting_music_api = playerConfig.api || "https://api.mizore.cn/meting/api.php";
+const music_server = playerConfig.server;
+const music_type = playerConfig.type;
+const music_id = playerConfig.id;
+const music_order = playerConfig.order;
+const music_mini = playerConfig.mini;
+const music_fixed = playerConfig.fixed;
+const music_volume = playerConfig.volume;
+const music_autoplay = playerConfig.autoplay;
+const music_loop = playerConfig.loop;
 
+// Initialize Music Player
 $.ajax({
-//   url: "https://api.mizore.cn/meting/api.php?server=netease&type=playlist&id=20173709",
   url: meting_music_api,
-  data:{
+  data: {
     server: music_server,
     type: music_type,
     id: music_id
@@ -63,28 +59,37 @@ $.ajax({
   dataType: "json",
   success: function (audio) {
     const ap = new APlayer({
-        container: music_fixed === false ? document.getElementById('aplayer-inner') : document.getElementById('aplayer-fixed') ,
-        audio: audio,
-        fixed: music_fixed === false ? false : true,
-        autoplay: music_autoplay,
-        order: music_order,
-        listFolded :true,
-        volum: music_volume,
-        mini: music_fixed === true ? true:music_mini,
-        lrcType: 3,
-        preload:"auto",
-        loop: music_loop
-
-        
+      container: music_fixed === false ? document.getElementById('aplayer-inner') : document.getElementById('aplayer-fixed'),
+      audio: audio,
+      fixed: music_fixed === false ? false : true,
+      autoplay: music_autoplay,
+      order: music_order,
+      listFolded: true,
+      volume: music_volume,
+      mini: music_fixed === true ? true : music_mini,
+      lrcType: 3,
+      preload: "auto",
+      loop: music_loop
     });
   },
+  error: function(xhr, status, error) {
+    console.error('Music player initialization failed:', error);
+  }
 });
 
+// Fetch Hitokoto
 fetch('https://v1.hitokoto.cn')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.getElementById('hitokoto_text')
-      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-      hitokoto.innerText = data.hitokoto
-    })
-    .catch(console.error)
+  .then(response => response.json())
+  .then(data => {
+    const hitokoto = document.getElementById('hitokoto_text');
+    hitokoto.innerText = data.hitokoto;
+    hitokoto.style.cursor = 'pointer';
+    hitokoto.onclick = () => {
+      window.open('https://hitokoto.cn/?uuid=' + data.uuid, '_blank', 'noopener');
+    };
+  })
+  .catch(error => {
+    console.error('Hitokoto fetch failed:', error);
+    const hitokoto = document.getElementById('hitokoto_text');
+    hitokoto.innerText = '生命的意义不在繁华，而在于淡泊。';
+  });

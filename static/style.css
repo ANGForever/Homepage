@@ -1,73 +1,60 @@
+/* Base */
 body {
-    font-size: 18px;
-    color: #6c767d;
-    background-color: #ebf1f5;
-    background-image: url("https://api.oneneko.com/v1/bing_today");
+    font-size: 16px;
+    color: #333;
+    background-color: #fafafa;
+    background-image: url("https://dailybing.com/api/v1");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     min-height: 800px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
 }
 
-
-/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
-
+/* Scrollbar */
 ::-webkit-scrollbar {
-    width: 5px;
-    /* height: 5px; */
-    background-color: #F5F5F5;
+    width: 4px;
 }
-
-
-/*定义滚动条轨道 内阴影+圆角*/
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background-color: #F5F5F5;
+    background-color: transparent;
 }
-
-
-/*定义滑块 内阴影+圆角*/
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: #555;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
 }
-#main .aplayer{
-    margin: 10px 0!important;
-}
+
+/* Typography */
 h1 {
-    font-size: 36px;
-    margin-bottom: .5em;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1rem;
 }
 
-h2 {
-    font-size: 24px;
+.lead {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
 }
 
-h3 {
-    font-size: 20px;
-    margin-top: 1em;
-}
-
-h4 {
-    font-size: 16px;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    color: black;
-}
-
+/* Card */
 .card {
+    background: rgba(255, 255, 255, 0.9);
     border: none;
-    padding: 50px 30px 0px;
-    border-radius: 0;
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.my-card {
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .container {
@@ -76,160 +63,193 @@ h4 {
     transform: translateY(-50%);
 }
 
-.my-card {
-    /* box-shadow: 0px 5px 15px 5px rgb(203, 221, 232); */
-}
-
-strike {
-    color: red;
-}
-
+/* Buttons */
 .btn {
-    border-radius: 0;
-    margin: 5px 0;
-    width: 100%;
-    padding: 12px 40px;
-    transition: ease;
+    border: none;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+    letter-spacing: 0.01em;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .btn-primary {
-    /* box-shadow: 0px 5px 15px 5px rgb(203, 221, 232); */
-    padding: 12px 40px;
-    transition: ease;
+    background: #4169E1;
+    color: white;
 }
 
 .btn-primary:hover {
-    box-shadow: 5px -2px 15px 0px rgb(203, 221, 232);
+    background: #3759ce;
+}
+
+.btn-info {
+    background: #38B2AC;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #2c9a94;
 }
 
 .btn-secondary {
-    /* box-shadow: 0px 5px 15px 5px rgb(203, 221, 232); */
-    padding: 12px 40px;
-    transition: ease;
+    background: #718096;
+    color: white;
 }
 
 .btn-secondary:hover {
-    box-shadow: 5px -2px 15px 0px rgb(203, 221, 232);
+    background: #5f6c80;
 }
 
 .btn-success {
-    /* box-shadow: 0px 5px 15px 5px rgb(203, 221, 232); */
-    padding: 12px 40px;
-    transition: ease;
+    background: #38A169;
+    color: white;
 }
 
 .btn-success:hover {
-    box-shadow: 5px -2px 15px 0px rgb(203, 221, 232);
+    background: #2f8a59;
 }
 
+/* Social Icons */
 .social {
-    padding-left: 0;
-}
-
-.social p {
-    margin-bottom: 0;
+    padding: 1rem 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .social li {
     list-style: none;
-    float: left;
-    margin-right: 15px;
 }
 
-.card-text {
-    margin-bottom: 20px;
+.social li a {
+    color: #666;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+    opacity: 0.8;
 }
 
-.social .fa {
-    font-size: 24px;
+.social li a:hover {
+    color: #4169E1;
+    transform: translateY(-2px);
+    opacity: 1;
 }
 
+/* Photo Background */
 .photo-bg {
-    /* background-image: url(assets/background.jpg); */
-    background-image: url(https://api.oneneko.com/v1/bing_today);
+    border-radius: 12px 0 0 12px;
+    background-image: url("https://pic.imgdb.cn/item/63b693e7be43e0d30ef057c7.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    min-height: 500px;
+}
+
+.photo-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.1), transparent);
+    border-radius: 12px 0 0 12px;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 footer p {
-    font-size: 12px;
+    font-size: 0.8125rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
 }
 
-#kaygb-blog-a,
-#kaygb-mail-a {
-    display: none;
+footer a {
+    color: #4169E1;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-@media (max-width: 1199px) {
-    body {
-        min-height: 600px;
+footer a:hover {
+    color: #3759ce;
+    text-decoration: none;
+}
+
+/* Music Player */
+#aplayer-inner {
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#aplayer-fixed {
+    z-index: 9999;
+}
+
+/* Hitokoto Text */
+#hitokoto_text {
+    color: #666;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 2px solid #4169E1;
+    background: rgba(65, 105, 225, 0.05);
+    border-radius: 0 6px 6px 0;
+    transition: all 0.2s ease;
+}
+
+#hitokoto_text:hover {
+    background: rgba(65, 105, 225, 0.08);
+    transform: translateX(2px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .photo-bg {
+        min-height: 250px;
+        border-radius: 12px 12px 0 0;
+    }
+    .photo-bg::before {
+        border-radius: 12px 12px 0 0;
+    }
+    .card {
+        border-radius: 0 0 12px 12px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        top: 0;
+        transform: none;
+        padding: 1rem;
+    }
+    .photo-bg {
+        height: 200px;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    .social {
+        gap: 1.25rem;
     }
     h1 {
-        font-size: 24px;
+        font-size: 1.75rem;
     }
-    h2,
-    .social .fa {
-        font-size: 20px;
-    }
-    h3 {
-        font-size: 16px;
-    }
-    h4,
-    p {
-        font-size: 14px;
-    }
-    .card {
-        padding: 50px 50px 0px;
-    }
-}
-
-@media (max-width: 1199px) {
-    .photo-bg {
-        min-height: calc(100vh - 500px);
-    }
-}
-
-@media(max-width:991px) {
-    .photo-bg {
-        background-position: top;
-        min-height: calc(90vh - 440px);
-    }
-}
-
-@media(max-width: 767px) {
-    .container {
-        position: relative;
-        top: 0;
-        transform: translateY(0);
-    }
-    .photo-bg {
-        height: 180px;
-    }
-    .card {
-        padding: 20px;
-    }
-    #kaygb-blog-a,
-    #kaygb-mail-a {
-        display: block;
-    }
-    #kaygb-blog,
-    #kaygb-mail {
-        display: none;
-    }
-}
-
-#frame {
-    width: 50%;
-    height: 50vh;
-    margin: 0;
-    background: #fff;
-    position: fixed;
-    z-index: 999;
-    top: 5%;
-    left: 5%;
-}
-
-#aplayer {
-    z-index: 20000000;
 }
