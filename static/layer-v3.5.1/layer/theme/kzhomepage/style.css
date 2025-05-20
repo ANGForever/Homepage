@@ -2,44 +2,43 @@ body .layer-ext-kzhomepage .layui-layer-title {
     color: transparent;
     border: 0;
     display: none;
-}
-
-.layer-ext-kzhomepage {
+  }
+  
+  .layer-ext-kzhomepage {
     background-color: transparent;
     box-shadow: none;
     border: none;
     transition: all 0.3s ease;
-}
-
-.layui-layer-setwin {
+  }
+  
+  .layui-layer-setwin {
     right: -50px;
     width: 50px;
     background: transparent;
-    color: #fff;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
-}
-
-.layui-layer-setwin .layui-layer-close {
-    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .layui-layer-setwin .layui-layer-close {
+    background-color: #0066cc;
     width: 36px;
     height: 36px;
-    border-radius: 50%;
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.layui-layer-setwin .layui-layer-close:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .layui-layer-setwin .layui-layer-close:hover {
+    background-color: #004c99;
     transform: rotate(90deg);
-}
-
-.layui-layer-setwin .layui-layer-close::before,
-.layui-layer-setwin .layui-layer-close::after {
-    content: '';
+  }
+  
+  .layui-layer-setwin .layui-layer-close::before,
+  .layui-layer-setwin .layui-layer-close::after {
+    content: "";
     position: absolute;
     width: 20px;
     height: 2px;
@@ -47,28 +46,29 @@ body .layer-ext-kzhomepage .layui-layer-title {
     top: 50%;
     left: 50%;
     transition: all 0.3s ease;
-}
-
-.layui-layer-setwin .layui-layer-close::before {
+  }
+  
+  .layui-layer-setwin .layui-layer-close::before {
     transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.layui-layer-setwin .layui-layer-close::after {
+  }
+  
+  .layui-layer-setwin .layui-layer-close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.layui-layer-setwin .layui-layer-min cite {
-    background-color: #fff;
+  }
+  
+  .layui-layer-setwin .layui-layer-min cite {
+    background-color: #333;
     width: 15px;
     left: 17.5px;
     height: 2px;
     position: absolute;
     transition: all 0.3s ease;
-}
-
-.layui-layer-iframe {
+  }
+  
+  .layui-layer-iframe {
     background: #fff;
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+    box-shadow: 10px 10px 0 rgba(0, 102, 204, 0.3);
+    border: 5px solid #f8f9fa;
+  }
+  
