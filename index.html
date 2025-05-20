@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="昂的深林小屋 - 个人导航页">
-    <meta name="keywords" content="昂的深林小屋,angforever,昂,个人导航">
-    <meta name="author" content="ANGForever">
-    <meta name="theme-color" content="#0066cc">
-    <meta name="baidu-site-verification" content="codeva-JFEYZWCt9h" />
-    
     <title>昂的深林小屋</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./logo.svg">
-    <link rel="icon" type="image/x-icon" href="https://upyuncloud.angforever.top/uploads%2F2023%2F05%2F06%2Fmg5XPlkH_favicon1.ico?_upt=91c696041684145805">
-    
-    <!-- Stylesheets -->
+    <meta name="description" content="ANGForever Index">
+    <meta name="keywords" content="昂的深林小屋, angforever, 昂, 个人导航">
+    <link rel="icon" type="svg/ico" href="./img/logo-removebg.svg">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet" href="./static/style.css?v=1.5">
+    <link rel="stylesheet" href="./static/style.css?v=1.1">
     <link rel="stylesheet" href="./static/APlayer-1.10.1/dist/APlayer.min.css">
-    
-    <!-- Music Player Configuration -->
+    <style>
+        body{
+            /*背景图片URL 可使用随机图片API */
+            background-image: url("https://dailybing.com/api/v1"); 
+        }
+        .photo-bg {
+            /* 卡片左侧图片 */
+            background-image: url("https://pic.imgdb.cn/item/63b693e7be43e0d30ef057c7.pn");
+        }
+    </style>
     <script>
-        const playerConfig = {
-            api: "https://injahow.github.io/meting/",
-            server: "netease",
-            type: "playlist",
-            id: "7323414308",
-            order: "random",
-            mini: false,
-            fixed: false,
-            volume: 0.5,
-            autoplay: false,
-            loop: "all"
-        };
-    </script>
+        // 音乐设置
+        let meting_music_api = "https://injahow.github.io/meting/";// meting api
+        let music_server = "netease"; // 音乐服务：网易云 netease 参见 meting api支持的服务
+        let music_type = "playlist"; // 歌曲类型：歌单playlist 单首歌曲 song  专辑 album
+        let music_id = "7323414308"; // 歌单ID或歌曲ID或者专辑ID 20173709 29732992
+        let music_order = "random"; // 音频循环顺序, 顺序播放： 'list', 随机播放：'random'
+        let music_mini = false; // mini模式 吸底模式开启后此选项实效 true / false
+        let music_fixed = false; // 吸底模式
+        let music_volume = 0.5; // 默认音量
+        let music_autoplay = false; // 自动播放
+        let music_loop = "all"; // 音频循环播放, 可选值: 'all', 'one', 'none' ，分别为全部循环，单曲循环，不循环
+        // 一言设置
+
     
+    </script>
+
     <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4Q5QG7EMP"></script>
     <script>
@@ -49,63 +50,25 @@
 </head>
 
 <body>
-    <main id="main" class="container">
+    <div id="main" class="container">
         <div class="row my-card justify-content-center">
-            <!-- Left side image -->
-            <div class="col-lg-4 photo-bg" role="img" aria-label="Background image"></div>
-            
-            <!-- Right side content -->
+            <div class="col-lg-4 photo-bg"></div>
             <div class="col-lg-8 card">
-                <header>
-                    <h1>昂的深林小屋</h1>
-                    <p class="lead">欢迎来到导航页</p>
-                    <p id="hitokoto_text" role="status" aria-live="polite">:D 一言获取中...</p>
-                </header>
-
-                <nav class="container-fluid">
+                <h1>昂的深林小屋</h1>
+                <p>欢迎来到导航页
+                </p>
+                <p id="hitokoto_text">:D 一言获取中...</p>
+                <div class="container-fluid">
                     <div class="row">
-                        <!-- Navigation buttons -->
-                        <button data-href="https://blankintro.angforever.top/" data-title="About" data-window="newtab"
-                            data-anim="4" data-area-w="80%" data-area-h="90%" data-shade="false"
-                            class="kz-nav-btn btn btn-info col-lg-4" aria-label="访问我的介绍">
-                            About
-                        </button>
-                        
-                        <button data-href="https://blog.angforever.top" data-title="Blog" data-window="newtab"
-                            data-anim="4" data-area-w="80%" data-area-h="90%" data-shade="false"
-                            class="kz-nav-btn btn btn-primary col-lg-4" aria-label="访问博客">
-                            Blog
-                        </button>
-
-                        <button data-href="https://cloudreve.angforever.top/" data-title="Cloudreve云盘" data-window="newtab"
-                            data-anim="4" data-area-w="80%" data-area-h="90%" data-shade="false"
-                            class="kz-nav-btn btn btn-info col-lg-4" aria-label="访问云盘">
-                            Cloudreve云盘
-                        </button>
-                        
-                        <button data-href="" data-title="分析"
-                            data-window="newtab" data-anim="4" data-area-w="80%" data-area-h="90%" data-shade="false"
-                            class="kz-nav-btn btn btn-secondary col-lg-4" aria-label="查看网站分析">
-                            占位
-                        </button>
-
-                        <button data-href="" data-title="分析"
-                            data-window="newtab" data-anim="4" data-area-w="80%" data-area-h="90%" data-shade="false"
-                            class="kz-nav-btn btn btn-secondary col-lg-4" aria-label="查看网站分析">
-                            占位
-                        </button>
-
-                        <button data-href="" data-title="分析"
-                        data-window="newtab" data-anim="4" data-area-w="80%" data-area-h="90%" data-shade="false"
-                        class="kz-nav-btn btn btn-secondary col-lg-4" aria-label="查看网站分析">
-                        占位
-                        </button>
+                        <a href="https://blog.angforever.top" target="_blank" class="btn btn-primary col-lg-4">BLOG</a>
+                        <a href="https://blankintro.angforever.top/" target="_blank" class="btn btn-secondary col-lg-4">About</a>
+                        <a href="https://cloudreve.angforever.top/" target="_blank" class="btn btn-success col-lg-4">Cloudreve云盘</a>
                     </div>
-                </nav>
+                </div>
+                <!-- <audio muted></audio> -->
+                <div id="aplayer-inner" class="aplayer"></div>
 
-                <!-- Music Player -->
-                <div id="aplayer-inner" class="aplayer" role="complementary" aria-label="音乐播放器"></div>
-
+                <!-- <h4 class="mt-4">or, keep your eyes on</h4> -->
                 <!-- Social Links -->
                 <ul class="social mt-1" role="list" aria-label="社交媒体链接">
                     <li>
@@ -133,7 +96,8 @@
                         </a>
                     </li>
                 </ul>
-
+                
+                <!-- <div id="aplayer" class="aplayer" data-order="random" data-id="20173709" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-volume="0.8"></div> -->
                 <footer>
                     <p>
                         Copyright 2024 © <a href="https://angforever.top/" target="_blank" rel="noopener">ANGForever</a>
@@ -152,18 +116,18 @@
                 </footer>
             </div>
         </div>
-    </main>
 
-    <!-- Fixed Music Player -->
-    <div id="aplayer-fixed" class="aplayer" role="complementary" aria-label="固定音乐播放器"></div>
+    </div>
 
-    <!-- Scripts -->
+    <!-- aplayer -->
+    <div id="aplayer-fixed"  class="aplayer"></div>
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="./static/APlayer-1.10.1/dist/APlayer.min.js"></script>
     <script src="./static/Meting.min.js"></script>
+    <!-- end_aplayer -->
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="./static/layer-v3.5.1/layer/layer.js"></script>
+    <!-- <script src="./static/main.js"></script> -->
     <script src="./static/main.js"></script>
-</body>
 </html>
